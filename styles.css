@@ -1,0 +1,177 @@
+/* General Body and Container Styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2c3e50;
+    overflow: hidden;
+}
+
+/* Loading Screen Styling */
+#loading-screen {
+    position: fixed; /* Ensure it's fixed to cover the entire screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #ecf0f1;
+    z-index: 999;
+}
+
+/* Infinite Loader Animation */
+.loader {
+    display: inline-grid;
+    width: 100px;  /* Define width */
+    height: 100px; /* Define height */
+    margin-bottom: 20px; /* Spacing from text */
+}
+.loader:before,
+.loader:after {
+    content: "";
+    grid-area: 1/1;
+    height: 100%; /* Fill the container height */
+    aspect-ratio: 1; /* Ensure the loader is square */
+    --c: #0000 64%, #ff6347 66% 98%, #0000 101%; /* Customize the color here */
+    background:
+      radial-gradient(35% 146% at 50% 159%, var(--c)) 0 0,
+      radial-gradient(35% 146% at 50% -59%, var(--c)) 25% 100%;
+    background-size: calc(100%/3) 50%;
+    background-repeat: repeat-x;
+    -webkit-mask: repeating-linear-gradient(90deg, #000 0 15%, #0000 0 50%) 0 0/200%;
+    animation: l9 .8s infinite linear;
+}
+.loader:after {
+    transform: scale(1, -1);
+    animation-delay: -.2s;
+}
+
+@keyframes l9 {
+    to {
+        -webkit-mask-position: -100% 0;
+    }
+}
+
+/* Main Container Styling */
+.hidden {
+    display: none;
+}
+
+.game-container {
+    text-align: center;
+    color: #ecf0f1;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* Grid Styling */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-gap: 15px;
+    margin: 20px auto;
+}
+
+.block {
+    width: 120px;
+    height: 120px;
+    background-color: #34495e;
+    border: 2px solid #ecf0f1;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.block:hover {
+    transform: scale(1.1);
+}
+
+.block.green {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+
+.block.red {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+/* Message Styling */
+.message {
+    font-size: 1.5em;
+    color: #f39c12;
+    margin-top: 20px;
+}
+
+/* Button Styling */
+button {
+    padding: 12px 25px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+#restart-btn {
+    background-color: #2980b9;
+    color: #ecf0f1;
+    box-shadow: 0 4px 10px rgba(41, 128, 185, 0.3);
+}
+
+#start-game-btn {
+    background-color: #16a085;
+    color: #ecf0f1;
+    box-shadow: 0 4px 10px rgba(22, 160, 133, 0.3);
+}
+
+#difficulty-btn {
+    background-color: #8e44ad;
+    color: #ecf0f1;
+    box-shadow: 0 4px 10px rgba(142, 68, 173, 0.3);
+}
+
+#bet-section {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#bet-amount {
+    padding: 10px;
+    font-size: 1em;
+    border: 2px solid #bdc3c7;
+    border-radius: 10px;
+    width: 150px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Active States */
+button:active {
+    transform: scale(1.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}

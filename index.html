@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Trading Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader"></div>
+        <h1>Loading...</h1>
+    </div>
+
+    <!-- Main Game Container -->
+    <div id="main-container" class="hidden">
+        <div class="game-container">
+            <h1>Color Trading Game</h1>
+            <p>Place your bet and select all the green blocks to win. Avoid the red ones!</p>
+            
+            <!-- Bet Section -->
+            <div id="bet-section">
+                <input type="number" id="bet-amount" placeholder="Enter your bet" />
+                <button id="start-game-btn">Start Game</button>
+            </div>
+
+            <!-- Game Grid (hidden until game starts) -->
+            <div id="game-grid" class="hidden">
+                <div class="grid">
+                    <div class="block"></div>
+                    <div class="block"></div>
+                    <div class="block"></div>
+                    <div class="block"></div>
+                    <div class="block"></div>
+                    <div class="block"></div>
+                    <div class="block"></div>
+                    <div class="block"></div>
+                    <div class="block"></div>
+                </div>
+                <p class="message"></p>
+                <button id="restart-btn">Restart Game</button>
+            </div>
+
+            <!-- Difficulty Toggle -->
+            <button id="difficulty-btn">Switch Difficulty: OFF</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
